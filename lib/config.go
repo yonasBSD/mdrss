@@ -4,14 +4,16 @@ import (
 	"encoding/json"
 	"errors"
 	"os"
+
+  "github.com/adrg/xdg"
 )
 
 func getConfigPath(config_path string) string {
   if FileExists(config_path) {
     return config_path
   } else {
-    dirname, _ := os.UserHomeDir()
-    return dirname + "/.config/mdrss/config.json"
+    configFilePath, _ := xdg.ConfigFile("mdrss/config.json")
+    return configFilePath
   }
 }
 
@@ -33,5 +35,6 @@ func ReadConfig(config_path string) (Config, error) {
     }
     return config, nil
   }
-  return config, errors.New("Config file not found. Please add it at ~/.config/mdrss/config.json")
+  configFilePath, _ := xdg.ConfigFile("mdrss/config.json")
+  return config, errors.New("Config file not found. Please add it at " + configFilePath)
 }

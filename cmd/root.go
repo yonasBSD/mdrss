@@ -42,7 +42,7 @@ func init() {
   // Cobra supports persistent flags, which, if defined here,
   // will be global for your application.
 
-  rootCmd.PersistentFlags().String("config", "~/.config/mdrss/config.yaml", "config file (default is $HOME/.config/mdrss/config.yaml)")
+  rootCmd.PersistentFlags().String("config", "~/.config/mdrss/config.yaml", "config file")
 
   // Cobra also supports local flags, which will only run
   // when this action is called directly.
