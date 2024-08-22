@@ -11,7 +11,7 @@ func getConfigPath(config_path string) string {
     return config_path
   } else {
     dirname, _ := os.UserHomeDir()
-    return dirname + "/.mdrss/config.json"
+    return dirname + "/.config/mdrss/config.json"
   }
 }
 
@@ -33,6 +33,5 @@ func ReadConfig(config_path string) (Config, error) {
     }
     return config, nil
   }
-  return config, errors.New("Config file not found. Please add it at ~/.mdrss/config.json")
+  return config, errors.New("Config file not found. Please add it at ~/.config/mdrss/config.json")
 }
-
