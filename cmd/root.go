@@ -15,13 +15,17 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
   Use:   "mdrss",
-  Short: "A brief description of your application",
-  Long: `A longer description that spans multiple lines and likely contains
-  examples and usage of using your application. For example:
+  Short: "Convert Markdown files into an RSS feed",
+  Long: `Convert Markdown files into an RSS feed.
 
-  Cobra is a CLI library for Go that empowers applications.
-  This application is a tool to generate the needed files
-  to quickly create a Cobra application.`,
+Example config file:
+{
+  "Author": "Timo Kats",
+  "Description": "Timo's weblog",
+  "InputFolder": "/tmp/a",
+  "OutputFile": "/tmp/b/rss.xml",
+  "Link": "rss.xml"
+}`,
   // Uncomment the following line if your bare application
   // has an action associated with it:
   // Run: func(cmd *cobra.Command, args []string) { },
